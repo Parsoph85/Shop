@@ -41,6 +41,6 @@ def get_by_id(id: str) -> Optional[Product]:
 
 
 def get_many(page: int = 0, limit: int = 10):
-    start = page * limit
+    start = (page - 1) * limit
     end = start + limit
     return _products[start:end]

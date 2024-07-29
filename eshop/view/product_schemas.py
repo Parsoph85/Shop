@@ -1,16 +1,16 @@
 from marshmallow import Schema, fields
 
 
-class OrderCreateDtoSchema(Schema):
+class ProductCreateDtoSchema(Schema):
     product_ids = fields.List(fields.Str(), required=True)
 
 
-class OrderSchema(Schema):
+class ProductSchema(Schema):
     id = fields.String()
-    product_ids = fields.List(fields.Str())
-    total = fields.Float()
+    name = fields.String()
+    price = fields.Float()
 
 
-class OrderGetManyParams(Schema):
+class ProductGetManyParams(Schema):
     page = fields.Int(required=True)
     limit = fields.Int(required=True)
